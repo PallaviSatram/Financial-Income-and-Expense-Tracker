@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Financial Summary</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h1>Financial Summary</h1>
+
+<a href="/dashboard" class="back-btn">Back to Dashboard</a>
+
+
+<div class="summary-container">
+
+    <!-- TOP ROW -->
+    <div class="summary-row">
+
+        <div class="analytics-card">
+
+            <h3>Financial Summary</h3>
+
+            <p>Total Income: <span id="totalIncome">₹0</span></p>
+
+            <p>Total Expense: <span id="totalExpense">₹0</span></p>
+
+            <p>Balance: <span id="balanceAmount">₹0</span></p>
+
+            <p id="balanceAlert"></p>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <h3>Total Expense</h3>
+
+            <p id="totalExpenseCard">Loading...</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SECOND ROW -->
+    <div class="summary-row">
+
+        <div class="analytics-card">
+
+            <h3>Categories Spent</h3>
+
+            <div id="categoriesList"></div>
+
+            <div id="categoryDetails"></div>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <h3>Monthly Expenses</h3>
+
+            <select id="monthSelect" onchange="loadMonthlyExpense()">
+
+                <option value="">Select Month</option>
+
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+
+            </select>
+
+            <div class="monthly-table-container">
+                <div id="monthlyTable"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>

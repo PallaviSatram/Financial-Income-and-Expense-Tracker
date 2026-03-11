@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="profile-container">
+
+<div class="profile-card">
+
+<img class="profile-image"
+src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png">
+
+<h2>My Profile</h2>
+
+<p><b>Name:</b> {{user.name}}</p>
+<p><b>Email:</b> {{user.email}}</p>
+
+<button onclick="openEdit()">Edit Profile</button>
+
+<a href="/delete_profile">
+<button class="delete-btn">Delete Profile</button>
+</a>
+
+<a href="/dashboard">
+<button class="back-btn">Back</button>
+</a>
+
+</div>
+
+</div>
+
+
+<div id="editModal" class="modal">
+
+<div class="modal-content">
+
+<h3>Edit Profile</h3>
+
+<form action="/update_profile" method="POST">
+
+<input type="text" name="name" value="{{user.name}}">
+
+<input type="email" name="email" value="{{user.email}}">
+
+<button type="submit">Save Changes</button>
+
+<button type="button" onclick="closeEdit()">Cancel</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+<script>
+
+function openEdit(){
+document.getElementById("editModal").style.display="flex"
+}
+
+function closeEdit(){
+document.getElementById("editModal").style.display="none"
+}
+
+</script>
+
+</body>
+</html>

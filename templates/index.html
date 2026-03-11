@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Financial Expense Tracker</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h1>Financial & Expense Tracker Dashboard</h1>
+
+<div class="form-section">
+
+    <!-- Add User Form -->
+    <div class="form-card">
+        <h2>Add New User</h2>
+
+        <form action="/add_user" method="POST">
+            <input type="text" name="name" placeholder="Enter Name" required>
+            <input type="email" name="email" placeholder="Enter Email" required>
+
+            <button type="submit">Add User</button>
+        </form>
+    </div>
+
+
+    <!-- Add Expense Form -->
+    <div class="form-card">
+        <h2>Add Expense</h2>
+
+        <form action="/add_expense" method="POST">
+
+            <input type="number" name="user_id" placeholder="User ID" required>
+            <input type="number" name="category_id" placeholder="Category ID" required>
+            <input type="number" name="amount" placeholder="Amount" required>
+            <input type="date" name="date" required>
+
+            <button type="submit">Add Expense</button>
+        </form>
+    </div>
+
+</div>
+
+
+<!-- Query Section -->
+<div class="main-container">
+
+{% for id, q in queries.items() %}
+
+<div class="query-card">
+
+<button class="query-btn" onclick="runQuery('{{id}}')">
+{{ q.title }}
+</button>
+
+<div id="output-{{id}}" class="output-area"></div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>

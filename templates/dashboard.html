@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h1>User Dashboard</h1>
+<div class="top-bar">
+
+<a href="/profile" class="profile-btn">
+<img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png">
+</a>
+
+</div>
+
+<a href="/logout" class="logout">Logout</a>
+
+
+
+<!-- ROW 1 : Forms -->
+<div class="form-row">
+
+    <div class="card">
+        <h2>Add Expense</h2>
+        <form action="/add_expense" method="POST">
+
+            <input type="text" name="category" placeholder="Category" required>
+            <input type="number" name="amount" placeholder="Amount" required>
+            <input type="date" name="date" required>
+
+            <button>Add Expense</button>
+
+        </form>
+    </div>
+
+
+    <div class="card">
+        <h2>Add Income</h2>
+        <form action="/add_income" method="POST">
+
+            <input type="text" name="source" placeholder="Income Source" required>
+            <input type="number" name="amount" placeholder="Amount" required>
+            <input type="date" name="date" required>
+
+            <button>Add Income</button>
+
+        </form>
+    </div>
+
+</div>
+
+
+
+<!-- ROW 2 : Tables -->
+<div class="tables-row">
+
+    <div class="card">
+
+        <h2>My Expenses</h2>
+
+        <button onclick="toggleExpenses()">Show Expenses</button>
+
+       <div class="table-container">
+    <div id="expenses"></div>
+</div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>My Income</h2>
+
+        <button onclick="toggleIncome()">Show Income</button>
+
+        <div class="table-container">
+    <div id="incomeTable"></div>
+</div>
+
+    </div>
+
+</div>
+
+</div><br>
+<div class="summary-section">
+
+<a href="/financial_summary">
+<button class="summary-btn">View Financial Summary</button>
+</a>
+
+</div>
+
+</div>
+
+
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
