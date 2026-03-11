@@ -72,7 +72,7 @@ SQLite stores all application data including user details, expenses, income reco
 
 **Project Structure**
 ExpenseTracker
-│
+|
 ├── app.py
 ├── database.py
 ├── queries.py
@@ -92,15 +92,15 @@ ExpenseTracker
 └── README.md
 
 **Installation**
-1 Clone the repository
+- Clone the repository
 git clone https://github.com/PallaviSatram/Financial-Income-and-Expense-Tracker/
-2 Navigate to the project folder
+- Navigate to the project folder
 cd expense-tracker
-3 Install dependencies
+- Install dependencies
 pip install flask
-4 Run the application
+- Run the application
 python app.py
-5 Open the browser
+- Open the browser
 http://127.0.0.1:5000
 
 **How It Works**
